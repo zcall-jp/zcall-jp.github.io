@@ -14,7 +14,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23060607'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23c9a84c' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho+B1:wght@600;700;800&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho+B1:wght@600;700;800&family=Cinzel:wght@500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -63,7 +63,7 @@ header{
   transition:background .35s,border-color .35s,backdrop-filter .35s;
 }
 header.scrolled{background:rgba(6,6,7,.82);backdrop-filter:blur(14px);border-bottom-color:rgba(201,168,76,.15)}
-.logo-mark{font-family:'Cinzel',serif;font-size:21px;font-weight:700;letter-spacing:.22em;background:var(--grad-gold);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 7s linear infinite;color:var(--gold)}
+.logo-mark{font-family:'Playfair Display',serif;font-size:25px;font-weight:700;letter-spacing:.03em;background:var(--grad-gold);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 7s linear infinite;color:var(--gold)}
 .logo-mark span{font-family:'Noto Sans JP',sans-serif;-webkit-text-fill-color:rgba(242,239,230,.45);color:rgba(242,239,230,.45);font-weight:400;font-size:11px;margin-left:12px;letter-spacing:.1em;animation:none}
 nav{display:flex;gap:30px;align-items:center}
 nav a{position:relative;color:rgba(242,239,230,.6);font-size:12px;text-decoration:none;letter-spacing:.12em;transition:color .25s;padding:4px 0}
@@ -116,8 +116,23 @@ nav a:hover::after{width:100%}
   transform:skewX(-22deg);animation:sheen 4s ease-in-out infinite;
 }
 .btn-line svg{width:21px;height:21px;flex-shrink:0}
+.btn-line-lg{font-size:17px;padding:22px 48px;border-radius:8px}
+.btn-line-lg svg{width:24px;height:24px}
 .cta-center{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:64px}
 .line-note{font-size:11px;color:var(--muted2);margin-top:12px;letter-spacing:.06em;text-align:center}
+/* お問い合わせ(LINE一本化)カード */
+.contact-card{
+  max-width:620px;margin:0 auto;text-align:center;
+  background:linear-gradient(170deg,rgba(6,199,85,.08),transparent 50%),var(--panel);
+  border:1px solid rgba(6,199,85,.35);
+  padding:56px 52px;position:relative;
+  box-shadow:0 40px 90px rgba(0,0,0,.55),0 0 70px rgba(6,199,85,.06);
+}
+.contact-card::before,.contact-card::after{content:'';position:absolute;width:26px;height:26px;pointer-events:none}
+.contact-card::before{top:-1px;left:-1px;border-top:2px solid #06C755;border-left:2px solid #06C755}
+.contact-card::after{bottom:-1px;right:-1px;border-bottom:2px solid #06C755;border-right:2px solid #06C755}
+.contact-lead{font-size:15px;color:var(--muted);line-height:2.05;margin-bottom:32px;letter-spacing:.02em}
+.contact-lead strong{color:#06C755;font-weight:900}
 
 /* ── FV ── */
 #fv{
@@ -656,7 +671,7 @@ textarea{min-height:110px;resize:vertical}
 /* ── フッター ── */
 footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,168,76,.12)}
 .footer-inner{max-width:1020px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
-.f-logo{font-family:'Cinzel',serif;font-size:22px;font-weight:700;letter-spacing:.22em;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--gold);margin-bottom:10px}
+.f-logo{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;letter-spacing:.03em;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--gold);margin-bottom:10px}
 .f-address{font-size:11px;color:var(--muted2);line-height:2}
 .f-nav{display:flex;flex-direction:column;gap:10px}
 .f-nav a{font-size:11px;color:var(--muted2);text-decoration:none;letter-spacing:.06em;transition:color .2s}
@@ -688,7 +703,7 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
 @media(max-width:768px){
   header{padding:0 18px}
   nav{display:none}
-  .logo-mark{font-size:17px}
+  .logo-mark{font-size:21px}
   .logo-mark span{font-size:9px;margin-left:8px;letter-spacing:.02em}
   #fv{padding:110px 22px 90px}
   #fv::after{font-size:300px;right:-50px;bottom:-60px}
@@ -729,7 +744,10 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
   .btn-gold{padding:17px 26px;font-size:14px}
   .btn-ghost{padding:16px 24px;font-size:13px}
   .btn-line{padding:16px 26px;font-size:14px}
+  .btn-line-lg{width:100%;padding:18px 20px;font-size:15px}
   .cta-center{gap:12px}
+  .contact-card{padding:36px 22px}
+  .contact-lead{font-size:14px}
   /* 問題提起 */
   .problem-quote{padding:32px 24px}
   .pq-body{font-size:14px}
@@ -1005,7 +1023,7 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
     </div>
     <div class="cta-center reveal">
       <a href="https://liff.line.me/1657665550-vA90Vd20/landing?follow=%40772jvedu&amp;lp=BtbX5N&amp;liff_id=1657665550-vA90Vd20" target="_blank" rel="noopener" class="btn-line"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5C6.2 2.5 1.5 6.36 1.5 11.11c0 4.26 3.76 7.83 8.84 8.5.34.07.81.23.93.52.1.27.07.68.03.95l-.15.9c-.04.27-.21 1.05.92.57 1.13-.48 6.1-3.59 8.32-6.15 1.54-1.69 2.11-3.4 2.11-5.29 0-4.75-4.7-8.61-10.5-8.61zM7.6 13.9H5.4a.55.55 0 0 1-.55-.55V8.9a.55.55 0 0 1 1.1 0v3.9h1.65a.55.55 0 0 1 0 1.1zm2.03-.55a.55.55 0 0 1-1.1 0V8.9a.55.55 0 0 1 1.1 0v4.45zm5.35 0a.55.55 0 0 1-.99.33l-2.25-3.06v2.73a.55.55 0 0 1-1.1 0V8.9a.55.55 0 0 1 .99-.33l2.25 3.06V8.9a.55.55 0 0 1 1.1 0v4.45zm3.62-2.78a.55.55 0 0 1 0 1.1h-1.65v1.13h1.65a.55.55 0 0 1 0 1.1h-2.2a.55.55 0 0 1-.55-.55V8.9a.55.55 0 0 1 .55-.55h2.2a.55.55 0 0 1 0 1.1h-1.65v1.12h1.65z"/></svg>LINEで無料相談</a>
-      <a href="#form" class="btn-gold">フォームで相談する →</a>
+      <a href="#form" class="btn-gold">無料相談はこちら →</a>
     </div>
   </div>
 </section>
@@ -1380,46 +1398,11 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
       <div class="s-kicker reveal">CONTACT</div>
       <h2 class="s-h2 reveal" style="text-align:center;margin-bottom:14px">まずはご相談を。</h2>
       <p class="reveal" style="font-size:14px;color:var(--muted2);text-align:center">無料相談で3つ以上の具体策をご提示します。最短即日ご対応。</p>
-      <div class="reveal" style="margin-top:28px">
-        <a href="https://liff.line.me/1657665550-vA90Vd20/landing?follow=%40772jvedu&amp;lp=BtbX5N&amp;liff_id=1657665550-vA90Vd20" target="_blank" rel="noopener" class="btn-line"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5C6.2 2.5 1.5 6.36 1.5 11.11c0 4.26 3.76 7.83 8.84 8.5.34.07.81.23.93.52.1.27.07.68.03.95l-.15.9c-.04.27-.21 1.05.92.57 1.13-.48 6.1-3.59 8.32-6.15 1.54-1.69 2.11-3.4 2.11-5.29 0-4.75-4.7-8.61-10.5-8.61zM7.6 13.9H5.4a.55.55 0 0 1-.55-.55V8.9a.55.55 0 0 1 1.1 0v3.9h1.65a.55.55 0 0 1 0 1.1zm2.03-.55a.55.55 0 0 1-1.1 0V8.9a.55.55 0 0 1 1.1 0v4.45zm5.35 0a.55.55 0 0 1-.99.33l-2.25-3.06v2.73a.55.55 0 0 1-1.1 0V8.9a.55.55 0 0 1 .99-.33l2.25 3.06V8.9a.55.55 0 0 1 1.1 0v4.45zm3.62-2.78a.55.55 0 0 1 0 1.1h-1.65v1.13h1.65a.55.55 0 0 1 0 1.1h-2.2a.55.55 0 0 1-.55-.55V8.9a.55.55 0 0 1 .55-.55h2.2a.55.55 0 0 1 0 1.1h-1.65v1.12h1.65z"/></svg>LINEで無料相談</a>
-        <p class="line-note">フォーム入力が面倒な方は、LINEから1分でご相談いただけます。</p>
-      </div>
     </div>
-    <div class="form-card reveal">
-      <div>
-        <label>お名前<span class="req">必須</span></label>
-        <input type="text" placeholder="山田 太郎">
-      </div>
-      <div>
-        <label>会社名<span class="req">必須</span></label>
-        <input type="text" placeholder="株式会社〇〇">
-      </div>
-      <div>
-        <label>メールアドレス<span class="req">必須</span></label>
-        <input type="email" placeholder="taro@example.com">
-      </div>
-      <div>
-        <label>電話番号<span class="req">必須</span></label>
-        <input type="tel" placeholder="090-0000-0000">
-      </div>
-      <div>
-        <label>現在の営業課題 <span style="font-size:10px;color:var(--muted2)">任意</span></label>
-        <textarea placeholder="「商談が取れない」「ノウハウが残らない」「社長が全部やっている」など、何でもお聞かせください"></textarea>
-      </div>
-      <div>
-        <label>当サービスをどこで知りましたか？ <span style="font-size:10px;color:var(--muted2)">任意</span></label>
-        <select>
-          <option value="">選択してください</option>
-          <option>YouTube</option>
-          <option>Instagram / Facebook広告</option>
-          <option>Google検索</option>
-          <option>知人からの紹介</option>
-          <option>展示会・セミナー</option>
-          <option>その他</option>
-        </select>
-      </div>
-      <div class="form-note">当社への情報のご提供はすべて任意となっております。取得した情報はプライバシーポリシーに従い適切に管理します。しつこい営業は一切行いません。</div>
-      <button class="btn-submit">無料で相談を予約する（30秒で完了）</button>
+    <div class="contact-card reveal">
+      <p class="contact-lead">ご相談は<strong>LINE</strong>で完結。<br>友だち追加後、そのままメッセージを送るだけ。<br>ヒアリングのうえ、御社に合った具体策をご提案します。</p>
+      <a href="https://liff.line.me/1657665550-vA90Vd20/landing?follow=%40772jvedu&amp;lp=BtbX5N&amp;liff_id=1657665550-vA90Vd20" target="_blank" rel="noopener" class="btn-line btn-line-lg"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5C6.2 2.5 1.5 6.36 1.5 11.11c0 4.26 3.76 7.83 8.84 8.5.34.07.81.23.93.52.1.27.07.68.03.95l-.15.9c-.04.27-.21 1.05.92.57 1.13-.48 6.1-3.59 8.32-6.15 1.54-1.69 2.11-3.4 2.11-5.29 0-4.75-4.7-8.61-10.5-8.61zM7.6 13.9H5.4a.55.55 0 0 1-.55-.55V8.9a.55.55 0 0 1 1.1 0v3.9h1.65a.55.55 0 0 1 0 1.1zm2.03-.55a.55.55 0 0 1-1.1 0V8.9a.55.55 0 0 1 1.1 0v4.45zm5.35 0a.55.55 0 0 1-.99.33l-2.25-3.06v2.73a.55.55 0 0 1-1.1 0V8.9a.55.55 0 0 1 .99-.33l2.25 3.06V8.9a.55.55 0 0 1 1.1 0v4.45zm3.62-2.78a.55.55 0 0 1 0 1.1h-1.65v1.13h1.65a.55.55 0 0 1 0 1.1h-2.2a.55.55 0 0 1-.55-.55V8.9a.55.55 0 0 1 .55-.55h2.2a.55.55 0 0 1 0 1.1h-1.65v1.12h1.65z"/></svg>LINEで無料相談する</a>
+      <p class="line-note">友だち追加は無料。しつこい営業は一切行いません。</p>
     </div>
   </div>
 </section>
