@@ -5,7 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zコール | トップセールスを、御社の営業チームに。</title>
 <meta name="description" content="トップセールスを、御社の営業チームに。最短3日で立ち上げ、営業ノウハウごと御社に残す内製化支援サービス。BtoB・BtoC対応。">
+<meta property="og:title" content="Zコール | トップセールスを、御社の営業チームに。">
+<meta property="og:description" content="トップセールスを、御社の営業チームに。最短3日で立ち上げ、営業ノウハウごと御社に残す内製化支援サービス。BtoB・BtoC対応。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zcall-jp.github.io/">
+<meta property="og:site_name" content="Zコール">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23060607'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23c9a84c' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho+B1:wght@600;700;800&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -24,7 +32,7 @@
   --muted2:rgba(242,239,230,.34);
   --red:#c0564a;
 }
-html{scroll-behavior:smooth;scroll-padding-top:90px}
+html{scroll-behavior:smooth;scroll-padding-top:90px;overflow-x:hidden}
 body{font-family:'Noto Sans JP',sans-serif;color:var(--txt);background:var(--bg);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 ::selection{background:var(--gold);color:#060607}
 ::-webkit-scrollbar{width:10px}
@@ -112,7 +120,24 @@ nav a:hover::after{width:100%}
   background-size:110px 110px;
   mask-image:radial-gradient(800px 600px at 70% 30%,#000 20%,transparent 75%);
   -webkit-mask-image:radial-gradient(800px 600px at 70% 30%,#000 20%,transparent 75%);
+  animation:gridPan 28s linear infinite;
 }
+@keyframes gridPan{to{background-position:110px 110px}}
+/* 近未来レイヤー:オーロラ / 粒子ネットワーク / スキャンライン */
+.fv-aurora{position:absolute;inset:-15%;pointer-events:none;filter:blur(70px);opacity:.55;z-index:0}
+.fv-aurora::before,.fv-aurora::after{content:'';position:absolute;border-radius:50%}
+.fv-aurora::before{width:46vw;height:46vw;min-width:340px;min-height:340px;background:radial-gradient(circle,rgba(201,168,76,.15),transparent 62%);top:2%;right:-4%;animation:aur1 15s ease-in-out infinite}
+.fv-aurora::after{width:40vw;height:40vw;min-width:300px;min-height:300px;background:radial-gradient(circle,rgba(120,116,220,.06),transparent 62%);bottom:-8%;left:-6%;animation:aur2 19s ease-in-out infinite}
+@keyframes aur1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-7%,9%) scale(1.18)}}
+@keyframes aur2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(9%,-7%) scale(1.12)}}
+#fvNet{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.5;pointer-events:none}
+.fv-scan{
+  position:absolute;left:8%;right:8%;top:12%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(201,168,76,.55),transparent);
+  pointer-events:none;opacity:0;
+  animation:scanY 8s cubic-bezier(.45,0,.35,1) infinite;
+}
+@keyframes scanY{0%{top:10%;opacity:0}8%{opacity:.55}45%{top:88%;opacity:0}100%{top:88%;opacity:0}}
 #fv::after{
   content:'Z';
   position:absolute;right:-30px;bottom:-100px;
@@ -246,6 +271,38 @@ section.s-alt{background:var(--bg2)}
 .form-head .s-kicker.reveal.in::after{width:44px}
 /* スクロール進捗バー */
 #scrollProgress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--grad-gold);z-index:300;box-shadow:0 0 10px rgba(201,168,76,.6)}
+/* カーソル追従グロー(PC・ホバー環境のみ) */
+#cursorGlow{
+  position:fixed;left:-999px;top:-999px;width:520px;height:520px;border-radius:50%;
+  pointer-events:none;z-index:1;mix-blend-mode:screen;
+  background:radial-gradient(circle,rgba(201,168,76,.055),transparent 60%);
+  transform:translate(-50%,-50%);
+}
+@media(hover:none){#cursorGlow{display:none}}
+/* トップへ戻る */
+#toTop{
+  position:fixed;right:20px;bottom:92px;width:46px;height:46px;border-radius:50%;
+  border:1px solid rgba(201,168,76,.5);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;font-size:15px;z-index:98;
+  background:rgba(6,6,7,.6);backdrop-filter:blur(8px);
+  opacity:0;transform:translateY(14px);pointer-events:none;
+  transition:opacity .4s,transform .4s,background .25s,box-shadow .25s;
+}
+#toTop.show{opacity:1;transform:none;pointer-events:auto}
+#toTop:hover{background:rgba(201,168,76,.15);box-shadow:0 0 26px rgba(201,168,76,.35)}
+/* 実績の下線チック */
+.stat-item{position:relative;padding-bottom:14px}
+.stat-item::after{content:'';position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:0;height:1px;background:var(--grad-gold);transition:width 1.2s ease .45s}
+.stat-item.in::after{width:44px}
+/* フローの縦ラインを描画アニメーションに */
+.flow-track::before{transform:scaleY(0);transform-origin:top;transition:transform 1.9s cubic-bezier(.22,1,.36,1) .25s}
+.flow-track.in::before{transform:scaleY(1)}
+/* FVメインCTAの鼓動 */
+.fv-cta .btn-gold{animation:ctaPulse 3.2s ease-in-out infinite}
+@keyframes ctaPulse{0%,100%{box-shadow:0 10px 34px rgba(201,168,76,.22)}50%{box-shadow:0 12px 48px rgba(201,168,76,.42)}}
+/* 事例カードの3Dチルト用 */
+.case-card{will-change:transform}
 /* 動きを減らす設定に配慮 */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -702,6 +759,9 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
 
 <!-- FV -->
 <section id="fv">
+  <div class="fv-aurora" aria-hidden="true"></div>
+  <canvas id="fvNet" aria-hidden="true"></canvas>
+  <span class="fv-scan" aria-hidden="true"></span>
   <div class="fv-particles" id="fvParticles" aria-hidden="true"></div>
   <div class="fv-wrap">
     <div class="fv-kicker">
@@ -1196,7 +1256,7 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
     <div class="s-kicker reveal" style="justify-content:center">HOW IT WORKS</div>
     <h2 class="s-h2 reveal" style="text-align:center">最短3日で<br class="br-sp">スタートするまでの流れ</h2>
     <p class="s-lead reveal" style="text-align:center;margin:0 auto 64px">煩雑な手続きは最小限に。スピードとシンプルさを追求しています。</p>
-    <div class="flow-track reveal-group">
+    <div class="flow-track reveal-group reveal-line">
       <div class="flow-row">
         <div class="flow-circle">1</div>
         <div class="flow-content">
@@ -1356,6 +1416,9 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
   <a href="#form" class="sticky-btn">無料相談を予約 →</a>
 </div>
 
+<div id="cursorGlow" aria-hidden="true"></div>
+<a href="#fv" id="toTop" aria-label="ページ上部へ戻る">↑</a>
+
 <script>
 /* ── 診断 ── */
 var ans={};
@@ -1422,12 +1485,91 @@ function toggleFaq(btn){
 var hdr=document.getElementById('siteHeader');
 var sticky=document.getElementById('stickyCta');
 var progress=document.getElementById('scrollProgress');
+var toTop=document.getElementById('toTop');
 window.addEventListener('scroll',function(){
   hdr.classList.toggle('scrolled',window.scrollY>40);
-  sticky.classList.toggle('show',window.scrollY>window.innerHeight*0.7);
+  var past=window.scrollY>window.innerHeight*0.7;
+  sticky.classList.toggle('show',past);
+  toTop.classList.toggle('show',past);
   var max=document.documentElement.scrollHeight-window.innerHeight;
   progress.style.width=(max>0?(window.scrollY/max*100):0)+'%';
 },{passive:true});
+var REDUCED=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* ── カーソル追従グロー ── */
+(function(){
+  if(REDUCED||!window.matchMedia('(hover: hover)').matches)return;
+  var g=document.getElementById('cursorGlow');if(!g)return;
+  var x=-999,y=-999,tx=-999,ty=-999,started=false;
+  window.addEventListener('mousemove',function(e){
+    tx=e.clientX;ty=e.clientY;
+    if(!started){started=true;x=tx;y=ty;loop()}
+  },{passive:true});
+  function loop(){
+    x+=(tx-x)*.12;y+=(ty-y)*.12;
+    g.style.left=x+'px';g.style.top=y+'px';
+    requestAnimationFrame(loop);
+  }
+})();
+/* ── 事例カードの3Dチルト ── */
+(function(){
+  if(REDUCED||!window.matchMedia('(hover: hover) and (min-width: 769px)').matches)return;
+  document.querySelectorAll('.case-card').forEach(function(c){
+    c.addEventListener('mousemove',function(e){
+      var r=c.getBoundingClientRect();
+      var rx=((e.clientY-r.top)/r.height-.5)*-4.5;
+      var ry=((e.clientX-r.left)/r.width-.5)*4.5;
+      c.style.transform='perspective(850px) translateY(-4px) rotateX('+rx.toFixed(2)+'deg) rotateY('+ry.toFixed(2)+'deg)';
+    });
+    c.addEventListener('mouseleave',function(){c.style.transform=''});
+  });
+})();
+/* ── FV 粒子ネットワーク ── */
+(function(){
+  if(REDUCED)return;
+  var cv=document.getElementById('fvNet');if(!cv||!cv.getContext)return;
+  var ctx=cv.getContext('2d'),W,H,pts=[],running=true;
+  function build(){
+    W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;
+    var n=Math.max(14,Math.min(64,Math.floor(W*H/24000)));
+    pts=[];
+    for(var i=0;i<n;i++)pts.push({
+      x:Math.random()*W,y:Math.random()*H,
+      vx:(Math.random()-.5)*.32,vy:(Math.random()-.5)*.32
+    });
+  }
+  build();
+  window.addEventListener('resize',build);
+  new IntersectionObserver(function(es){running=es[0].isIntersecting},{threshold:0}).observe(cv);
+  var LINK=130;
+  (function loop(){
+    requestAnimationFrame(loop);
+    if(!running)return;
+    ctx.clearRect(0,0,W,H);
+    var i,j,p,q,dx,dy,d;
+    for(i=0;i<pts.length;i++){
+      p=pts[i];
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0)p.x=W;if(p.x>W)p.x=0;
+      if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+    }
+    for(i=0;i<pts.length;i++){
+      for(j=i+1;j<pts.length;j++){
+        p=pts[i];q=pts[j];
+        dx=p.x-q.x;dy=p.y-q.y;d=Math.sqrt(dx*dx+dy*dy);
+        if(d<LINK){
+          ctx.strokeStyle='rgba(201,168,76,'+((1-d/LINK)*.22).toFixed(3)+')';
+          ctx.lineWidth=1;
+          ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();
+        }
+      }
+    }
+    ctx.fillStyle='rgba(201,168,76,.65)';
+    for(i=0;i<pts.length;i++){
+      p=pts[i];
+      ctx.beginPath();ctx.arc(p.x,p.y,1.3,0,6.283);ctx.fill();
+    }
+  })();
+})();
 /* ── 金の粒子 ── */
 (function(){
   var pc=document.getElementById('fvParticles');
@@ -1454,7 +1596,7 @@ var io=new IntersectionObserver(function(entries){
     if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
   });
 },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(function(el){io.observe(el)});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-line').forEach(function(el){io.observe(el)});
 /* ── 実績カウントアップ ── */
 function countUp(el){
   var target=parseInt(el.getAttribute('data-count'),10),dur=1600,t0=null;
