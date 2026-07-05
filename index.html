@@ -100,6 +100,24 @@ nav a:hover::after{width:100%}
   transition:border-color .25s,color .25s,background .25s;
 }
 .btn-ghost:hover{border-color:var(--gold-l);color:var(--gold-l);background:rgba(201,168,76,.06)}
+.btn-line{
+  position:relative;overflow:hidden;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:#06C755;color:#fff;
+  font-weight:900;font-size:15px;letter-spacing:.04em;
+  padding:18px 34px;border-radius:6px;text-decoration:none;
+  box-shadow:0 10px 34px rgba(6,199,85,.28);
+  transition:background .25s,transform .2s,box-shadow .3s;
+}
+.btn-line:hover{background:#05b34c;transform:translateY(-2px);box-shadow:0 14px 44px rgba(6,199,85,.45)}
+.btn-line::after{
+  content:'';position:absolute;top:0;left:-70%;width:36%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+  transform:skewX(-22deg);animation:sheen 4s ease-in-out infinite;
+}
+.btn-line svg{width:21px;height:21px;flex-shrink:0}
+.cta-center{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:64px}
+.line-note{font-size:11px;color:var(--muted2);margin-top:12px;letter-spacing:.06em;text-align:center}
 
 /* ── FV ── */
 #fv{
@@ -710,6 +728,8 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
   .s-lead{font-size:13px;margin-bottom:44px}
   .btn-gold{padding:17px 26px;font-size:14px}
   .btn-ghost{padding:16px 24px;font-size:13px}
+  .btn-line{padding:16px 26px;font-size:14px}
+  .cta-center{gap:12px}
   /* 問題提起 */
   .problem-quote{padding:32px 24px}
   .pq-body{font-size:14px}
@@ -747,7 +767,7 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
 <div id="scrollProgress"></div>
 
 <header id="siteHeader">
-  <div class="logo-mark">Z Call <span>アポイント獲得・営業内製化支援サービス</span></div>
+  <div class="logo-mark">Z call <span>アポイント獲得・営業内製化支援サービス</span></div>
   <nav>
     <a href="#concept">コンセプト</a>
     <a href="#strength">強み</a>
@@ -785,6 +805,7 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
       <span class="pill">内製化まで伴走</span>
     </div>
     <div class="fv-cta">
+      <a href="https://liff.line.me/1657665550-vA90Vd20/landing?follow=%40772jvedu&amp;lp=BtbX5N&amp;liff_id=1657665550-vA90Vd20" target="_blank" rel="noopener" class="btn-line"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5C6.2 2.5 1.5 6.36 1.5 11.11c0 4.26 3.76 7.83 8.84 8.5.34.07.81.23.93.52.1.27.07.68.03.95l-.15.9c-.04.27-.21 1.05.92.57 1.13-.48 6.1-3.59 8.32-6.15 1.54-1.69 2.11-3.4 2.11-5.29 0-4.75-4.7-8.61-10.5-8.61zM7.6 13.9H5.4a.55.55 0 0 1-.55-.55V8.9a.55.55 0 0 1 1.1 0v3.9h1.65a.55.55 0 0 1 0 1.1zm2.03-.55a.55.55 0 0 1-1.1 0V8.9a.55.55 0 0 1 1.1 0v4.45zm5.35 0a.55.55 0 0 1-.99.33l-2.25-3.06v2.73a.55.55 0 0 1-1.1 0V8.9a.55.55 0 0 1 .99-.33l2.25 3.06V8.9a.55.55 0 0 1 1.1 0v4.45zm3.62-2.78a.55.55 0 0 1 0 1.1h-1.65v1.13h1.65a.55.55 0 0 1 0 1.1h-2.2a.55.55 0 0 1-.55-.55V8.9a.55.55 0 0 1 .55-.55h2.2a.55.55 0 0 1 0 1.1h-1.65v1.12h1.65z"/></svg>LINEで無料相談</a>
       <a href="#diag" class="btn-gold">営業課題を無料で診断する →</a>
       <a href="#case" class="btn-ghost">導入事例を見る</a>
     </div>
@@ -799,8 +820,8 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
 <!-- マーキー -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Z Call</span><span>◆</span><span>TOP SALES, FOR YOUR TEAM</span><span>◆</span><span>SALES ENABLEMENT</span><span>◆</span><span>START IN 3 DAYS</span><span>◆</span>
-    <span>Z Call</span><span>◆</span><span>TOP SALES, FOR YOUR TEAM</span><span>◆</span><span>SALES ENABLEMENT</span><span>◆</span><span>START IN 3 DAYS</span><span>◆</span>
+    <span>Z call</span><span>◆</span><span>TOP SALES, FOR YOUR TEAM</span><span>◆</span><span>SALES ENABLEMENT</span><span>◆</span><span>START IN 3 DAYS</span><span>◆</span>
+    <span>Z call</span><span>◆</span><span>TOP SALES, FOR YOUR TEAM</span><span>◆</span><span>SALES ENABLEMENT</span><span>◆</span><span>START IN 3 DAYS</span><span>◆</span>
   </div>
 </div>
 
@@ -982,8 +1003,9 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
         </div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:64px" class="reveal">
-      <a href="#form" class="btn-gold">無料で相談してみる →</a>
+    <div class="cta-center reveal">
+      <a href="https://liff.line.me/1657665550-vA90Vd20/landing?follow=%40772jvedu&amp;lp=BtbX5N&amp;liff_id=1657665550-vA90Vd20" target="_blank" rel="noopener" class="btn-line"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5C6.2 2.5 1.5 6.36 1.5 11.11c0 4.26 3.76 7.83 8.84 8.5.34.07.81.23.93.52.1.27.07.68.03.95l-.15.9c-.04.27-.21 1.05.92.57 1.13-.48 6.1-3.59 8.32-6.15 1.54-1.69 2.11-3.4 2.11-5.29 0-4.75-4.7-8.61-10.5-8.61zM7.6 13.9H5.4a.55.55 0 0 1-.55-.55V8.9a.55.55 0 0 1 1.1 0v3.9h1.65a.55.55 0 0 1 0 1.1zm2.03-.55a.55.55 0 0 1-1.1 0V8.9a.55.55 0 0 1 1.1 0v4.45zm5.35 0a.55.55 0 0 1-.99.33l-2.25-3.06v2.73a.55.55 0 0 1-1.1 0V8.9a.55.55 0 0 1 .99-.33l2.25 3.06V8.9a.55.55 0 0 1 1.1 0v4.45zm3.62-2.78a.55.55 0 0 1 0 1.1h-1.65v1.13h1.65a.55.55 0 0 1 0 1.1h-2.2a.55.55 0 0 1-.55-.55V8.9a.55.55 0 0 1 .55-.55h2.2a.55.55 0 0 1 0 1.1h-1.65v1.12h1.65z"/></svg>LINEで無料相談</a>
+      <a href="#form" class="btn-gold">フォームで相談する →</a>
     </div>
   </div>
 </section>
@@ -1358,6 +1380,10 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
       <div class="s-kicker reveal">CONTACT</div>
       <h2 class="s-h2 reveal" style="text-align:center;margin-bottom:14px">まずはご相談を。</h2>
       <p class="reveal" style="font-size:14px;color:var(--muted2);text-align:center">無料相談で3つ以上の具体策をご提示します。最短即日ご対応。</p>
+      <div class="reveal" style="margin-top:28px">
+        <a href="https://liff.line.me/1657665550-vA90Vd20/landing?follow=%40772jvedu&amp;lp=BtbX5N&amp;liff_id=1657665550-vA90Vd20" target="_blank" rel="noopener" class="btn-line"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5C6.2 2.5 1.5 6.36 1.5 11.11c0 4.26 3.76 7.83 8.84 8.5.34.07.81.23.93.52.1.27.07.68.03.95l-.15.9c-.04.27-.21 1.05.92.57 1.13-.48 6.1-3.59 8.32-6.15 1.54-1.69 2.11-3.4 2.11-5.29 0-4.75-4.7-8.61-10.5-8.61zM7.6 13.9H5.4a.55.55 0 0 1-.55-.55V8.9a.55.55 0 0 1 1.1 0v3.9h1.65a.55.55 0 0 1 0 1.1zm2.03-.55a.55.55 0 0 1-1.1 0V8.9a.55.55 0 0 1 1.1 0v4.45zm5.35 0a.55.55 0 0 1-.99.33l-2.25-3.06v2.73a.55.55 0 0 1-1.1 0V8.9a.55.55 0 0 1 .99-.33l2.25 3.06V8.9a.55.55 0 0 1 1.1 0v4.45zm3.62-2.78a.55.55 0 0 1 0 1.1h-1.65v1.13h1.65a.55.55 0 0 1 0 1.1h-2.2a.55.55 0 0 1-.55-.55V8.9a.55.55 0 0 1 .55-.55h2.2a.55.55 0 0 1 0 1.1h-1.65v1.12h1.65z"/></svg>LINEで無料相談</a>
+        <p class="line-note">フォーム入力が面倒な方は、LINEから1分でご相談いただけます。</p>
+      </div>
     </div>
     <div class="form-card reveal">
       <div>
@@ -1401,7 +1427,7 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
 <footer>
   <div class="footer-inner">
     <div>
-      <div class="f-logo">Z Call</div>
+      <div class="f-logo">Z call</div>
       <div class="f-address">株式会社ZenZen<br>〒160-0023 東京都新宿区西新宿 ×-×-×</div>
     </div>
     <div class="f-nav">
