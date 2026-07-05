@@ -42,6 +42,10 @@ body::before{
 .gold-text{background:var(--grad-gold);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 7s linear infinite}
 @keyframes shine{to{background-position:200% center}}
 .serif{font-family:'Shippori Mincho B1',serif}
+.speed-num{font-size:20px}
+/* スマホ専用改行 / PC専用改行 */
+.br-sp{display:none}
+@media(max-width:768px){.br-sp{display:inline}.br-pc{display:none}}
 
 /* ── ヘッダー ── */
 header{
@@ -641,6 +645,41 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
   .sticky-msg{display:none}
   .sticky{justify-content:center}
   .fv-scroll{display:none}
+  /* 見出し・本文のスマホ最適化 */
+  .fv-body{font-size:14px}
+  .s-h2{font-size:26px;line-height:1.55}
+  .s-lead{font-size:13px;margin-bottom:44px}
+  .btn-gold{padding:17px 26px;font-size:14px}
+  .btn-ghost{padding:16px 24px;font-size:13px}
+  /* 問題提起 */
+  .problem-quote{padding:32px 24px}
+  .pq-body{font-size:14px}
+  /* コンセプト比較 */
+  .concept-label{font-size:9px;letter-spacing:.08em;padding:5px 9px}
+  /* 診断 */
+  .diag-q{font-size:15px}
+  .diag-opt{font-size:13px;padding:13px 16px;gap:10px}
+  .result-title{font-size:22px}
+  /* 事例カード:バッジを下に回して見出しを全幅に */
+  .case-top{flex-direction:column;align-items:flex-start;gap:10px;padding:22px 24px}
+  .case-result-txt{font-size:17px}
+  .case-bot{padding:20px 24px}
+  /* フロー:円を小さくして本文幅を確保 */
+  .flow-row{grid-template-columns:52px 1fr;gap:16px;padding-bottom:38px}
+  .flow-circle{width:52px;height:52px;font-size:17px}
+  .flow-track::before{left:25px}
+  .flow-content{padding-top:6px}
+  .flow-name{font-size:16px}
+  .flow-desc{font-size:12px}
+  .flow-speed-note{display:block;padding:18px 16px}
+  .flow-speed-note p{font-size:14px}
+  .speed-num{font-size:16px}
+  /* FAQ */
+  .faq-trigger{padding:18px 18px}
+  .fq-text{font-size:13px}
+  .faq-inner{padding:0 18px 20px 62px;font-size:12px}
+  /* フォーム */
+  .btn-submit{font-size:13.5px;letter-spacing:.02em;padding:17px 8px}
 }
 </style>
 </head>
@@ -771,7 +810,7 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
 <section id="concept" class="s-alt">
   <div class="s-inner">
     <div class="s-kicker reveal">CONCEPT</div>
-    <h2 class="s-h2 reveal">「代行」から「自立支援」へ。</h2>
+    <h2 class="s-h2 reveal">「代行」から<br class="br-sp">「自立支援」へ。</h2>
     <p class="s-lead reveal">Zコールが定義する新しい営業支援のかたち。</p>
     <div class="concept-split">
       <div class="concept-col old reveal-l">
@@ -991,7 +1030,7 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
 <section id="team">
   <div class="s-inner">
     <div class="s-kicker reveal">OUR TEAM</div>
-    <h2 class="s-h2 reveal">担当するのは、<br>実績のあるトップセールスだけ。</h2>
+    <h2 class="s-h2 reveal">担当するのは、<br>実績のある<br class="br-sp">トップセールスだけ。</h2>
     <p class="s-lead reveal">全員が「数字を出した経験」を持つ実戦派。採用・育成コストゼロで、即戦力が御社に並走します。</p>
     <div class="team-list">
 
@@ -1155,7 +1194,7 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
 <section id="flow">
   <div class="s-inner">
     <div class="s-kicker reveal" style="justify-content:center">HOW IT WORKS</div>
-    <h2 class="s-h2 reveal" style="text-align:center">最短3日でスタートするまでの流れ</h2>
+    <h2 class="s-h2 reveal" style="text-align:center">最短3日で<br class="br-sp">スタートするまでの流れ</h2>
     <p class="s-lead reveal" style="text-align:center;margin:0 auto 64px">煩雑な手続きは最小限に。スピードとシンプルさを追求しています。</p>
     <div class="flow-track reveal-group">
       <div class="flow-row">
@@ -1193,7 +1232,7 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
     </div>
     <div class="flow-speed-center reveal">
       <div class="flow-speed-note">
-        <p>お問い合わせから <span class="gold-text" style="font-size:20px">最短3日</span> でスタート可能</p>
+        <p>お問い合わせから <span class="gold-text speed-num">最短3日</span> でスタート可能</p>
         <span>今月の商談に、間に合わせます。</span>
       </div>
     </div>
