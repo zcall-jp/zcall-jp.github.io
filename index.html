@@ -1772,13 +1772,15 @@ document.addEventListener('click',function(e){
     fetch(FORM_ENDPOINT,{method:'POST',body:JSON.stringify(data)})
       .then(function(r){return r.json()})
       .then(function(j){
-        if(!j||!j.ok)throw new Error((j&&j.error)||'送信に失敗しました');
+        if(!j||!j.ok){var se=new Error((j&&j.error)||'不明なエラー');se.server=true;throw se}
         form.hidden=true;done.hidden=false;
         track('form_submit',{source:data.source||'unselected'});
         done.scrollIntoView({behavior:'smooth',block:'center'});
       })
-      .catch(function(){
-        showErr('送信に失敗しました。通信環境をご確認のうえ、もう一度お試しください。');
+      .catch(function(e){
+        console.error('inquiry submit error:',e);
+        if(e&&e.server){showErr('送信処理でエラーが発生しました：'+e.message)}
+        else{showErr('送信に失敗しました。通信環境をご確認のうえ、もう一度お試しください。')}
         btn.disabled=false;btn.textContent=orig;
       });
   });
