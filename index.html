@@ -1431,6 +1431,29 @@ footer{background:#040405;padding:64px 40px 36px;border-top:1px solid rgba(201,1
 <a href="#fv" id="toTop" aria-label="ページ上部へ戻る">↑</a>
 
 <script>
+/* ══════════════════════════════════════════════════════════
+   アクセス解析(Google Analytics 4)
+   ↓ここに測定ID（G-から始まる）を入れると計測が開始します。
+   例: var GA_ID='G-ABCDEFGHIJ';
+   空のままなら計測は行われず、外部への通信も発生しません。
+   ══════════════════════════════════════════════════════════ */
+var GA_ID='';
+(function(){
+  if(!GA_ID)return;
+  var s=document.createElement('script');
+  s.async=true;
+  s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;
+  document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[];
+  window.gtag=function(){dataLayer.push(arguments)};
+  gtag('js',new Date());
+  gtag('config',GA_ID,{anonymize_ip:true});
+})();
+/* イベント送信ヘルパー（GA未設定時は何もしない） */
+function track(name,params){
+  if(typeof window.gtag==='function'){window.gtag('event',name,params||{})}
+}
+
 /* ── 診断 ── */
 var ans={};
 function nextDiag(q,a){
@@ -1479,6 +1502,7 @@ function showResult(){
   document.getElementById('resultBody').innerHTML=r.body+'<br><br>'+note;
   document.querySelectorAll('.diag-step').forEach(function(s){s.classList.remove('active')});
   document.getElementById('dresult').classList.add('active');
+  track('diagnosis_complete',{result_type:r.badge});
 }
 function restartDiag(){
   ans={};
@@ -1631,6 +1655,21 @@ var io2=new IntersectionObserver(function(entries){
   });
 },{threshold:.3});
 io2.observe(document.getElementById('stats'));
+
+/* ── クリック計測（LINE遷移・各CTA） ── */
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a');
+  if(!a)return;
+  if(a.classList.contains('btn-line')){
+    track('line_click',{location:a.closest('#form')?'contact':(a.closest('#fv')?'hero':'mid')});
+  }else if(a.classList.contains('h-cta')){
+    track('cta_click',{label:'header_free_diagnosis'});
+  }else if(a.classList.contains('sticky-btn')){
+    track('cta_click',{label:'sticky_reserve'});
+  }else if(a.classList.contains('btn-gold')){
+    track('cta_click',{label:(a.textContent||'').trim().slice(0,24)});
+  }
+},true);
 </script>
 </body>
 </html>
