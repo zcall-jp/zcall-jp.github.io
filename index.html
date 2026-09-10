@@ -1525,6 +1525,20 @@ var FORM_ENDPOINT='https://script.google.com/macros/s/AKfycby-jMN31NUbT8M4tOltg5
   gtag('js',new Date());
   gtag('config',GA_ID,{anonymize_ip:true});
 })();
+/* 流入元（UTM・参照元）を記憶：申込時にシートへ送る */
+(function(){
+  try{
+    var q=new URLSearchParams(location.search),u={};
+    ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(function(k){if(q.get(k))u[k]=q.get(k)});
+    if(Object.keys(u).length)sessionStorage.setItem('zc_utm',JSON.stringify(u));
+    if(document.referrer&&!sessionStorage.getItem('zc_ref')&&document.referrer.indexOf(location.host)<0)sessionStorage.setItem('zc_ref',document.referrer);
+  }catch(e){}
+})();
+function getAttribution(){
+  var u={};try{u=JSON.parse(sessionStorage.getItem('zc_utm')||'{}')}catch(e){}
+  var ref='';try{ref=sessionStorage.getItem('zc_ref')||''}catch(e){}
+  return {utm_source:u.utm_source||'',utm_medium:u.utm_medium||'',utm_campaign:u.utm_campaign||'',utm_content:u.utm_content||'',referrer:ref};
+}
 /* イベント送信ヘルパー（GA未設定時は何もしない） */
 function track(name,params){
   if(typeof window.gtag==='function'){window.gtag('event',name,params||{})}
@@ -1765,6 +1779,7 @@ document.addEventListener('click',function(e){
       source:checked?checked.value:'',
       page:location.href
     };
+    var attr=getAttribution();for(var k in attr)data[k]=attr[k];
     if(!data.name||!data.company||!data.email||!data.tel){showErr('必須項目（お名前・会社名・メールアドレス・電話番号）をご入力ください。');return}
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)){showErr('メールアドレスの形式をご確認ください。');return}
     if(!FORM_ENDPOINT){showErr('現在フォームを準備中です。お手数ですが、時間をおいて再度お試しください。');return}
