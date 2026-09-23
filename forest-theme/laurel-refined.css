@@ -1,0 +1,9 @@
+/* Equal laurel geometry and consistent copy at every viewport. */
+.hero-facts.award-badges>.laurel-badge{aspect-ratio:326/344;container-type:inline-size}
+.laurel-art{object-fit:contain}
+.badge-copy{inset:29% 7% 18%;transform:none;justify-content:flex-start}
+.badge-copy>span,.badge-copy p,.badge-copy small{background-image:linear-gradient(180deg,#f3dc75 0%,#fff0ad 38%,#ddc767 69%,#baa13c 100%)}
+.hero-facts.award-badges .badge-copy>span{font-size:clamp(13px,8.6cqw,17px);letter-spacing:-.04em;line-height:1.5;margin:0}
+.hero-facts .badge-copy p{margin-top:5px}
+.badge-copy strong{font-size:clamp(40px,28cqw,54px)!important;letter-spacing:-.055em}
+.hero-facts .badge-copy .badge-channels{font-size:clamp(15px,10.4cqw,21px);letter-spacing:-.06em;line-height:1.28;margin-top:7px}

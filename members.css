@@ -1,0 +1,18 @@
+/* Member photographs supplied via https://zcall-jp.github.io/#team */
+.member-section{background:#f2f5ef;padding:88px 0 92px;color:#153f37}
+.member-heading{margin-bottom:40px}.member-heading h2{font-size:clamp(30px,3.4vw,44px);line-height:1.45;letter-spacing:.03em;margin:14px 0 18px}.member-lead{font-size:16px;line-height:1.9;color:#49635a;margin:0}
+.member-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px}
+.member-card{min-width:0}.member-photo{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center top;background:#d8e0d7}
+.member-info{padding-top:21px;border-bottom:1px solid #cad6cc;padding-bottom:23px}.member-role{font-size:12px;letter-spacing:.12em;color:#476254;margin:0 0 7px}.member-info h3{font-size:24px;line-height:1.5;letter-spacing:.08em;margin:0 0 14px;font-weight:700}.member-career{font-size:13px;font-weight:700;margin:0 0 8px;border-left:3px solid #b18c2c;padding-left:10px;line-height:1.6}.member-bio{font-size:13px;line-height:1.9;color:#4f625a;margin:0}
+@media(max-width:900px){.member-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 24px}.member-section{padding:64px 0}.member-photo{max-height:380px}.member-info h3{font-size:23px}}
+@media(max-width:480px){.member-section{padding:48px 0}.member-heading{margin-bottom:28px}.member-heading h2{font-size:29px}.member-lead{font-size:14px}.member-grid{gap:28px 16px}.member-info{padding-top:14px;padding-bottom:16px}.member-info h3{font-size:19px;letter-spacing:.02em;margin-bottom:10px}.member-role{font-size:11px;letter-spacing:.04em}.member-career{font-size:11px;padding-left:7px}.member-bio{font-size:12px;line-height:1.8}}
+
+/* Keep portraits in one horizontal row at every viewport. */
+.member-grid{display:flex;gap:26px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scroll-padding-inline:1px;padding:0 0 16px;scrollbar-width:thin;scrollbar-color:#718a7c #e0e7de;-webkit-overflow-scrolling:touch}
+.member-card{flex:0 0 calc((100% - 78px)/4);min-width:240px;scroll-snap-align:start}
+.member-grid:focus-visible{outline:2px solid #153f37;outline-offset:5px}
+.member-scroll-hint{font-size:12px;line-height:1.7;text-align:right;color:#49635a;margin:0 0 14px}
+@media(max-width:900px){.member-grid{gap:22px}.member-card{flex-basis:260px;min-width:260px}.member-photo{max-height:none}}
+@media(max-width:480px){.member-grid{gap:18px}.member-card{flex-basis:76%;min-width:220px}.member-info h3{font-size:23px}.member-career{font-size:13px}.member-scroll-hint{font-size:11px}.member-heading{margin-bottom:22px}}
+
+.member-tags{display:flex;flex-wrap:wrap;gap:7px;list-style:none;margin:15px 0 0;padding:0}.member-tags li{max-width:100%;box-sizing:border-box;border:1px solid #b6a16c;border-radius:18px;background:#ece8d9;color:#314e42;padding:6px 10px;font-size:11px;line-height:1.65;letter-spacing:.01em;overflow-wrap:anywhere}.member-tags li::before{content:none}
