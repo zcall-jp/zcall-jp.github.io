@@ -1,0 +1,42 @@
+/* ===== スマホ向け UI/UX 調整（最後に読み込む） ===== */
+@media(max-width:640px){
+  /* ヒーロー: 読める大きさ・縦を詰める */
+  #main .hero .hero-stage{width:90%!important;padding:26px 0 18px!important;grid-template-rows:auto 250px auto!important}
+  #main .hero .hero-lead{font-size:18px!important;padding:5px 10px!important}
+  #main .hero h1{font-size:clamp(46px,14.5vw,58px)!important;line-height:1.12!important}
+  #main .hero .hero-description{font-size:14px!important;line-height:1.7!important;margin-top:14px!important}
+  #main .hero a.button.hero-button{position:static!important;display:flex!important;width:100%!important;min-width:0!important;min-height:58px!important;margin:16px 0 0!important;font-size:18px!important;letter-spacing:.02em}
+  #main .hero .hero-person{height:250px!important}
+  #main .hero .hero-profile .profile-name{font-size:26px!important}
+  /* バッジは3列で1段に */
+  #main .hero .hero-facts.award-badges{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:0 6px!important;max-width:none!important;margin-top:4px!important}
+  #main .hero .hero-facts.award-badges>.laurel-badge{width:100%!important;justify-self:stretch!important}
+  #main .hero .hero-facts.award-badges>.laurel-badge:last-child{grid-column:auto!important}
+  #main .hero .badge-copy>span{font-size:11px!important}
+  #main .hero .badge-copy strong{font-size:32px!important}
+  #main .hero .badge-copy b{font-size:12px!important}
+  #main .hero .badge-copy em{font-size:10px!important}
+  #main .hero .hero-facts .badge-copy .badge-words{font-size:10px!important}
+  #main .hero .hero-facts .badge-copy .badge-channels{font-size:13px!important;line-height:1.3!important}
+  /* 横スクロール列: 指で送りやすく、端で止まる */
+  .member-grid,.case-rail{scroll-snap-type:x mandatory!important;-webkit-overflow-scrolling:touch;scroll-padding-left:6%}
+  .member-card,.result-card{scroll-snap-align:start!important}
+  /* フォーム: iOSの自動ズームを防ぐ(16px以上)・タップしやすい高さ */
+  .contact-box input,.contact-box textarea{font-size:16px!important;padding:14px!important;border-radius:6px!important}
+  .contact-box .inq-radio{min-height:44px;font-size:15px!important;margin-top:2px!important}
+  .contact-box .inq-radio input{width:22px!important;height:22px!important}
+  .contact-box .button.inq-submit{min-height:60px!important;font-size:18px!important}
+  .contact-box label{font-size:14px!important}
+  .contact-box .inq-source legend{font-size:14px!important}
+  /* FAQ: タップ領域を広く */
+  .faq summary{padding:6px 0;min-height:44px;align-items:center}
+  /* 追従ボタン分の余白 */
+  body{padding-bottom:76px}
+  footer{padding-bottom:20px}
+  /* 追従の相談ボタン */
+  .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 5% calc(10px + env(safe-area-inset-bottom));background:rgba(21,63,55,.96);backdrop-filter:blur(6px);box-shadow:0 -6px 18px rgba(0,0,0,.18);transform:translateY(110%);transition:transform .25s ease}
+  .sticky-cta.is-visible{transform:translateY(0)}
+  .sticky-cta a{display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;border-radius:8px;background:var(--gold);color:#173a32;font-size:17px;font-weight:900;box-shadow:0 3px 0 #aa8429}
+  .sticky-cta small{font-size:11px;font-weight:700;color:#173a32;opacity:.8}
+}
+@media(min-width:641px){.sticky-cta{display:none}}
