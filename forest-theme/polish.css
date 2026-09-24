@@ -1,0 +1,129 @@
+/* 2026-09-23: layout refinement, preserving the approved copy and creative. */
+.hero-stage{height:690px;width:min(1100px,90%)}
+.hero-copy{width:540px;padding-top:38px}
+.hero-lead{font-size:27px;margin-bottom:12px}
+h1{font-size:84px;line-height:1.12}
+.hero-description{font-size:16px;line-height:1.7;margin-top:19px;max-width:none}
+.hero-description span{display:inline-block}
+.hero-button{display:flex;width:315px;min-height:62px;margin-top:18px;font-size:19px}
+.hero-support{font-size:12px;margin-top:13px}
+.hero-person{width:560px;height:680px;right:0;bottom:0;top:auto}
+.hero-profile{top:140px;right:-18px;width:200px}
+.profile-school{font-size:14px}
+.profile-achievement{font-size:22px}
+.profile-name{font-size:34px}
+.profile-audience>span{font-size:12px}
+.profile-audience>strong{font-size:27px}
+.profile-role{font-size:11px}
+.hero-facts.award-badges{position:absolute;left:0;top:auto;bottom:22px;width:580px;margin:0;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:center}
+.hero-facts.award-badges>.laurel-badge{min-width:0}
+.badge-copy{inset:28% 9% 13%;transform:none;filter:none}
+.badge-copy>span{font-size:14px}
+.badge-copy strong{font-size:51px!important}
+.badge-copy em{font-size:14px}
+.badge-copy b{font-size:18px}
+.hero-facts .badge-copy .badge-words{font-size:12px;line-height:1.4}
+.hero-facts .badge-copy .badge-channels{font-size:19px;line-height:1.35;letter-spacing:-.05em;margin-top:6px}
+.hero-note{font-size:12px;line-height:1.8}
+.tags li{font-size:12px}
+.feature-content p{font-size:15px}
+.service-path small,.service-path p{font-size:13px}
+.plan-note,.price-main>span{font-size:12px}
+@media(min-width:1001px) and (max-width:1150px){
+ .hero-stage{width:92%}.hero-copy{width:49%}.hero-lead{font-size:24px}h1{font-size:76px}
+ .hero-description{max-width:390px}.hero-person{right:-25px;width:510px;height:650px}
+ .hero-profile{right:-6px;top:132px;width:160px}.profile-achievement{font-size:18px}.profile-name{font-size:29px}.profile-school{font-size:12px}.profile-role{font-size:10px}
+ .hero-facts.award-badges{width:540px}.hero-facts .badge-copy .badge-channels{font-size:17px}
+}
+@media(max-width:1000px){
+ .hero-stage{display:grid;grid-template-columns:55% 45%;grid-template-rows:auto 370px auto;width:min(620px,92%);height:auto;padding-bottom:24px}
+ .hero-copy{grid-column:1/-1;width:100%;padding:30px 0 0}
+ .hero-lead{font-size:25px}h1{font-size:72px}
+ .hero-description{font-size:16px;max-width:100%;margin-top:18px}
+ .hero-button{position:static;display:flex;width:100%;max-width:390px;min-width:0;margin-top:20px}
+ .hero-support{position:static;width:100%;text-align:left;margin-top:14px;font-size:12px}
+ .hero-person{position:relative;grid-column:1;grid-row:2;align-self:end;width:calc(100% + 40px);height:360px;right:auto;top:auto;bottom:auto;left:-20px}
+ .hero-person:after{inset:75% 0 0;background:linear-gradient(transparent,var(--navy))}
+ .hero-profile{position:relative;grid-column:2;grid-row:2;align-self:center;top:auto;right:auto;left:auto;width:100%;padding:0 0 0 5px}
+ .profile-school{font-size:14px}.profile-achievement{font-size:22px}.profile-name{font-size:34px}.profile-role{font-size:12px;white-space:normal}.profile-audience>span{font-size:12px}.profile-audience>strong{font-size:27px}
+ .hero-facts.award-badges{position:relative;grid-column:1/-1;left:auto;top:auto;bottom:auto;width:100%;margin:4px 0 0;gap:8px}
+ .hero-facts .badge-copy .badge-channels{font-size:19px}
+ nav{display:none}
+}
+@media(max-width:640px){
+ .hero-stage{grid-template-rows:auto 295px auto;width:90%;padding-bottom:22px}
+ .hero-copy{padding-top:27px}.hero-lead{font-size:20px;padding:5px 10px}h1{font-size:58px}
+ .hero-description{font-size:14px;line-height:1.8;margin-top:17px;padding:6px 9px}
+ .hero-description span{display:block}
+ .hero-button{min-height:60px;font-size:18px;margin-top:18px}
+ .hero-support{font-size:12px;line-height:1.7}
+ .hero-person{height:285px;width:calc(100% + 34px);left:-18px}
+ .hero-profile{padding-left:0}.profile-school{font-size:12px;margin-bottom:6px}.profile-achievement{font-size:17px;line-height:1.25}.profile-name{font-size:28px;margin-top:10px}.profile-role{font-size:11px;line-height:1.6}.profile-role span{display:block}.profile-role span+span{margin-left:0}.profile-audience>span{font-size:11px;white-space:normal}.profile-audience>strong{font-size:24px}.profile-audience>strong>span{font-size:15px}
+ .hero-facts.award-badges{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 8px;max-width:380px;justify-self:center;margin-top:0}
+ .hero-facts.award-badges>.laurel-badge:last-child{grid-column:1/-1;width:calc((100% - 8px)/2);justify-self:center;margin-top:0}
+ .badge-copy>span{font-size:12px}.badge-copy strong{font-size:46px!important}.badge-copy b{font-size:16px}.badge-copy em{font-size:12px}
+ .hero-facts .badge-copy .badge-words{font-size:12px}.hero-facts .badge-copy .badge-channels{font-size:20px}
+ .hero-note{font-size:12px}.feature-content p{font-size:14px}.tags li{font-size:12px}.service-path small{font-size:12px}.service-path p{font-size:13px}
+ .outcomes table,.outcomes thead,.outcomes tbody th{font-size:12px}.plan-note{font-size:12px}.price-detail ul{font-size:13px}
+}
+@media(max-width:370px){
+ h1{font-size:51px}.hero-lead{font-size:18px}.hero-description{font-size:13px}
+ .hero-stage{grid-template-rows:auto 280px auto}.hero-person{height:267px}
+ .profile-achievement{font-size:15px}.profile-name{font-size:25px}.profile-audience>span{font-size:11px}.profile-school{font-size:12px}
+ .badge-copy strong{font-size:40px!important}.badge-copy b{font-size:14px}.badge-copy em{font-size:12px}
+ .hero-facts.award-badges{gap:0 8px}
+}
+
+/* Portrait sizing: keep the face clear and the image grounded across widths. */
+@media(min-width:1151px){
+ .hero-stage{height:730px}
+ .hero-person{width:clamp(580px,43vw,620px);height:725px;right:-55px}
+ .hero-profile{right:-35px;top:135px}
+}
+@media(min-width:1001px) and (max-width:1150px){
+ .hero-stage{height:710px}
+ .hero-person{width:540px;height:690px;right:-35px}
+ .hero-profile{right:-10px;top:100px;width:160px}
+ .hero-facts.award-badges{width:clamp(440px,46vw,525px)}
+}
+@media(max-width:1000px){
+ .hero-stage{grid-template-columns:58% 42%;grid-template-rows:auto clamp(330px,56vw,440px) auto}
+ .hero-person{height:100%;width:calc(100% + 54px);left:-32px}
+ .hero-profile{padding-left:8px}
+}
+@media(max-width:640px){
+ .hero-stage{grid-template-columns:56% 44%;grid-template-rows:auto clamp(300px,79vw,430px) auto}
+ .hero-person{width:calc(100% + 52px);left:-28px}
+ .hero-profile{padding-left:0}
+}
+
+/* Bring the portrait into the copy composition on desktop. */
+@media(min-width:1151px){
+ .hero-person{width:700px;height:800px;right:100px;bottom:-90px}
+ .hero-profile{right:25px}
+}
+@media(min-width:1001px) and (max-width:1150px){
+ .hero-person{width:600px;height:750px;right:25px;bottom:-40px}
+}
+
+@media(min-width:1001px){.hero-person:after{inset:52% 0 0;background:linear-gradient(transparent,rgba(8,29,80,.9))}}
+
+/* Balance the portrait and the adjacent biography as one group. */
+@media(min-width:1151px){
+ .hero-person{right:75px}
+ .hero-profile{right:0;top:150px;width:280px}
+ .profile-school{font-size:15px}
+ .profile-achievement{font-size:30px;line-height:1.3}
+ .profile-audience>span{font-size:13px}
+ .profile-audience>strong{font-size:32px}
+ .profile-name{font-size:42px}
+ .profile-role{font-size:12px}
+}
+@media(min-width:1001px) and (max-width:1150px){
+ .hero-profile{right:0;top:145px;width:190px}
+ .profile-achievement{font-size:21px}
+ .profile-name{font-size:33px}
+ .profile-role{font-size:11px;white-space:normal}
+ .profile-role span{display:block}
+ .profile-role span+span{margin-left:0}
+}
