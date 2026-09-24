@@ -1,0 +1,49 @@
+/* Mobile landing composition: a full-height portrait and readable proof points. */
+@media(max-width:640px){
+ #main .hero{background:#153f37!important;overflow:hidden!important}
+ #main .hero .hero-stage{position:relative!important;width:100%!important;height:620px!important;margin:0!important;padding:0!important;overflow:hidden!important}
+ #main .hero .hero-stage *{all:revert!important;box-sizing:border-box!important;font-family:inherit!important;margin:0!important;padding:0!important;border:0!important;color:inherit!important;line-height:1.35!important;letter-spacing:normal!important}
+ #main .hero .hero-stage .hero-copy{display:contents!important}
+ #main .hero .hero-stage .hero-lead{position:absolute!important;top:36px!important;left:20px!important;display:inline-flex!important;background:#000!important;padding:6px 10px!important;z-index:3!important;font-size:15px!important;font-weight:800!important;white-space:nowrap!important;width:max-content!important;height:auto!important;gap:0!important}
+ #main .hero .hero-stage .hero-lead .hero-method{color:#e4bc43!important}
+ #main .hero .hero-stage h1{position:absolute!important;top:76px!important;left:18px!important;z-index:3!important;font-size:clamp(38px,10.7vw,52px)!important;font-weight:900!important;line-height:1.18!important;letter-spacing:-.05em!important;color:#fffdf8!important}
+ #main .hero .hero-stage h1 *{font:inherit!important;line-height:inherit!important;letter-spacing:inherit!important}
+ #main .hero .hero-stage h1 .accent{color:#e4bc43!important}
+ #main .hero .hero-stage h1 .dot{font-size:.72em!important}
+ #main .hero .hero-stage .hero-person{position:absolute!important;top:38px!important;right:-86px!important;width:clamp(295px,85vw,380px)!important;height:370px!important;z-index:1!important;pointer-events:none!important}
+ #main .hero .hero-stage .hero-person img{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center bottom!important}
+ #main .hero .hero-stage .hero-person:after{content:""!important;position:absolute!important;inset:78% 0 0!important;background:linear-gradient(transparent,#153f37)!important}
+ #main .hero .hero-stage .hero-profile{position:absolute!important;left:20px!important;right:auto!important;top:204px!important;width:175px!important;z-index:3!important;font-weight:700!important;color:#fffdf8!important}
+ #main .hero .hero-stage .profile-school{display:block!important;font-size:11px!important;margin-bottom:3px!important}
+ #main .hero .hero-stage .profile-achievement{display:block!important;font-size:17px!important;font-weight:800!important;color:#e4bc43!important}
+ #main .hero .hero-stage .profile-achievement span{display:block!important;font:inherit!important}
+ #main .hero .hero-stage .profile-audience{margin-top:5px!important}
+ #main .hero .hero-stage .profile-audience>span{display:block!important;font-size:10px!important}
+ #main .hero .hero-stage .profile-audience>strong{font-size:23px!important;font-weight:900!important;color:#e4bc43!important}
+ #main .hero .hero-stage .profile-audience>strong>span{font-size:13px!important}
+ #main .hero .hero-stage .profile-name{font-size:23px!important;font-weight:800!important;margin-top:6px!important}
+ #main .hero .hero-stage .profile-role{font-size:9px!important}
+ #main .hero .hero-stage .profile-role span{display:block!important}
+ #main .hero .hero-stage .hero-description{position:absolute!important;top:396px!important;left:50%!important;transform:translateX(-50%)!important;z-index:3!important;display:block!important;width:max-content!important;max-width:calc(100% - 24px)!important;height:auto!important;background:#000!important;padding:7px 10px!important;color:#fff!important;font-size:clamp(10px,2.9vw,14px)!important;font-weight:700!important;white-space:nowrap!important}
+ #main .hero .hero-stage .hero-description *{font:inherit!important;line-height:inherit!important}
+ #main .hero .hero-stage .hero-description .hero-service-highlight{color:#e4bc43!important}
+ #main .hero .hero-stage .hero-facts.award-badges{position:absolute!important;top:438px!important;left:12px!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:5px!important;width:calc(100% - 24px)!important;z-index:3!important;color:#e4bc43!important}
+ #main .hero .hero-stage .laurel-badge{position:relative!important;display:block!important;width:100%!important;height:112px!important;min-width:0!important}
+ #main .hero .hero-stage .laurel-art{display:block!important;width:100%!important;height:100%!important;object-fit:fill!important}
+ #main .hero .hero-stage .badge-copy{position:absolute!important;inset:30px 0 0!important;display:flex!important;flex-direction:column!important;align-items:center!important;text-align:center!important;color:#e4bc43!important;font-weight:900!important}
+ #main .hero .hero-stage .badge-copy>span{font-size:11px!important;font-weight:800!important;white-space:nowrap!important}
+ #main .hero .hero-stage .badge-copy p{display:block!important;white-space:nowrap!important;margin-top:3px!important;line-height:1!important}
+ #main .hero .hero-stage .badge-copy strong{font-family:Arial,sans-serif!important;font-size:36px!important;font-weight:900!important;line-height:1!important;letter-spacing:-.05em!important}
+ #main .hero .hero-stage .badge-copy em{font-size:10px!important;font-style:normal!important}
+ #main .hero .hero-stage .badge-copy b{font-size:13px!important;font-weight:800!important}
+ #main .hero .hero-stage .badge-copy .badge-words{font-size:10px!important}
+ #main .hero .hero-stage .badge-copy .badge-channels{font-size:11px!important;font-weight:800!important;line-height:1.4!important;margin-top:6px!important}
+ #main .hero .hero-stage a.button.hero-button{display:flex!important;position:absolute!important;left:20px!important;bottom:20px!important;z-index:4!important;width:calc(100% - 40px)!important;height:48px!important;min-height:48px!important;min-width:0!important;justify-content:center!important;align-items:center!important;background:#e4bc43!important;color:#153f37!important;font-size:20px!important;font-weight:900!important;border-radius:5px!important;text-decoration:none!important;box-shadow:0 4px 0 #ad8a2d!important;cursor:pointer!important}
+}
+
+@media(max-width:640px){
+ #main .hero .hero-stage .hero-profile .profile-career,
+ #main .hero .hero-stage .hero-profile .profile-career *,
+ #main .hero .hero-stage .hero-profile .profile-audience,
+ #main .hero .hero-stage .hero-profile .profile-audience *{line-height:1.1!important}
+}

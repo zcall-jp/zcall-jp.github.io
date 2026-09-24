@@ -1,23 +1,5 @@
 /* ===== スマホ向け UI/UX 調整（最後に読み込む） ===== */
 @media(max-width:640px){
-  /* ヒーロー: 読める大きさ・縦を詰める */
-  #main .hero .hero-stage{width:90%!important;padding:26px 0 18px!important;grid-template-rows:auto 250px auto!important}
-  #main .hero .hero-lead{font-size:18px!important;padding:5px 10px!important}
-  #main .hero h1{font-size:clamp(46px,14.5vw,58px)!important;line-height:1.12!important}
-  #main .hero .hero-description{font-size:14px!important;line-height:1.7!important;margin-top:14px!important}
-  #main .hero a.button.hero-button{position:static!important;display:flex!important;width:100%!important;min-width:0!important;min-height:58px!important;margin:16px 0 0!important;font-size:18px!important;letter-spacing:.02em}
-  #main .hero .hero-person{height:250px!important}
-  #main .hero .hero-profile .profile-name{font-size:26px!important}
-  /* バッジは3列で1段に */
-  #main .hero .hero-facts.award-badges{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:0 6px!important;max-width:none!important;margin-top:4px!important}
-  #main .hero .hero-facts.award-badges>.laurel-badge{width:100%!important;justify-self:stretch!important}
-  #main .hero .hero-facts.award-badges>.laurel-badge:last-child{grid-column:auto!important}
-  #main .hero .badge-copy>span{font-size:11px!important}
-  #main .hero .badge-copy strong{font-size:32px!important}
-  #main .hero .badge-copy b{font-size:12px!important}
-  #main .hero .badge-copy em{font-size:10px!important}
-  #main .hero .hero-facts .badge-copy .badge-words{font-size:10px!important}
-  #main .hero .hero-facts .badge-copy .badge-channels{font-size:13px!important;line-height:1.3!important}
   /* 横スクロール列: 指で送りやすく、端で止まる */
   .member-grid,.case-rail{scroll-snap-type:x mandatory!important;-webkit-overflow-scrolling:touch;scroll-padding-left:6%}
   .member-card,.result-card{scroll-snap-align:start!important}
