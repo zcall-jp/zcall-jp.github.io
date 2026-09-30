@@ -1,8 +1,5 @@
 /* ===== スマホ向け UI/UX 調整（最後に読み込む） ===== */
 @media(max-width:640px){
-  /* 横スクロール列: 指で送りやすく、端で止まる */
-  .member-grid,.case-rail{scroll-snap-type:x mandatory!important;-webkit-overflow-scrolling:touch;scroll-padding-left:6%}
-  .member-card,.result-card{scroll-snap-align:start!important}
   /* フォーム: iOSの自動ズームを防ぐ(16px以上)・タップしやすい高さ */
   .contact-box input,.contact-box textarea{font-size:16px!important;padding:14px!important;border-radius:6px!important}
   .contact-box .inq-radio{min-height:44px;font-size:15px!important;margin-top:2px!important}
@@ -10,8 +7,6 @@
   .contact-box .button.inq-submit{min-height:60px!important;font-size:18px!important}
   .contact-box label{font-size:14px!important}
   .contact-box .inq-source legend{font-size:14px!important}
-  /* FAQ: タップ領域を広く */
-  .faq summary{padding:6px 0;min-height:44px;align-items:center}
   /* 追従ボタン分の余白 */
   body{padding-bottom:76px}
   footer{padding-bottom:20px}
